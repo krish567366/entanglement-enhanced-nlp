@@ -1,0 +1,2288 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Quantum-inspired Natural Language Processing framework">
+      
+      
+        <meta name="author" content="Krishna Bajpai">
+      
+      
+        <link rel="canonical" href="https://krish567366.github.io/entanglement-enhanced-nlp/theory/">
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../examples/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Quantum NLP Concepts - Entanglement-Enhanced NLP</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-nlp-theory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Entanglement-Enhanced NLP" class="md-header__button md-logo" aria-label="Entanglement-Enhanced NLP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entanglement-Enhanced NLP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quantum NLP Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/krish567366/entanglement-enhanced-nlp" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    krish567366/entanglement-enhanced-nlp
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/" class="md-tabs__link">
+          
+  
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Entanglement-Enhanced NLP" class="md-nav__button md-logo" aria-label="Entanglement-Enhanced NLP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Entanglement-Enhanced NLP
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/krish567366/entanglement-enhanced-nlp" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    krish567366/entanglement-enhanced-nlp
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI Tool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Theory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Quantum NLP Concepts
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum NLP Concepts
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-quantum-inspired-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌌 Introduction to Quantum-Inspired NLP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌌 Introduction to Quantum-Inspired NLP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-quantum-concepts-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Quantum Concepts in NLP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Quantum Concepts in NLP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superposition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoherence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-entanglement-in-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 Quantum Entanglement in Embeddings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Quantum Entanglement in Embeddings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Foundation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bell-state-inspiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell State Inspiration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-in-entangledembedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in EntangledEmbedding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-state-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌊 Quantum State Evolution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌊 Quantum State Evolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schrodinger-equation-inspiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schrödinger Equation Inspiration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hamiltonian-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamiltonian Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolution-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evolution Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-superposition-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Quantum Superposition States
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Quantum Superposition States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#superposition-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superposition Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amplitude-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amplitude Calculation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-decoherence-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Quantum Decoherence Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Quantum Decoherence Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decoherence-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoherence Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoherence-in-nlp-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoherence in NLP Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-measurement-and-collapse" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔬 Quantum Measurement and Collapse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔬 Quantum Measurement and Collapse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measurement-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlp-measurement-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLP Measurement Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-information-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 Quantum Information Measures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧮 Quantum Information Measures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#von-neumann-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Von Neumann Entropy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mutual Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concurrence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Quantum Error Correction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Quantum Error Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-correction-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Correction Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-syndrome-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Syndrome Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-and-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Performance and Scaling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Performance and Scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Strategies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-theoretical-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Future Theoretical Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Future Theoretical Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-classical-hybrid-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum-Classical Hybrid Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-quantum-phenomena" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Quantum Phenomena
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theoretical-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Mathematical Appendix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Mathematical Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-gate-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Gate Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-matrix-formalism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Matrix Formalism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#information-theoretic-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Information Theoretic Measures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jupyter Notebooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-quantum-inspired-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌌 Introduction to Quantum-Inspired NLP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌌 Introduction to Quantum-Inspired NLP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-quantum-concepts-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Quantum Concepts in NLP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Quantum Concepts in NLP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superposition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoherence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-entanglement-in-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 Quantum Entanglement in Embeddings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Quantum Entanglement in Embeddings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Foundation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bell-state-inspiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell State Inspiration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-in-entangledembedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in EntangledEmbedding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-state-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌊 Quantum State Evolution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌊 Quantum State Evolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schrodinger-equation-inspiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schrödinger Equation Inspiration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hamiltonian-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamiltonian Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolution-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evolution Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-superposition-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Quantum Superposition States
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Quantum Superposition States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#superposition-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superposition Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amplitude-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amplitude Calculation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-decoherence-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Quantum Decoherence Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Quantum Decoherence Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decoherence-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoherence Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoherence-in-nlp-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoherence in NLP Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-measurement-and-collapse" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔬 Quantum Measurement and Collapse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔬 Quantum Measurement and Collapse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measurement-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlp-measurement-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLP Measurement Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-information-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 Quantum Information Measures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧮 Quantum Information Measures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#von-neumann-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Von Neumann Entropy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mutual Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concurrence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Quantum Error Correction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Quantum Error Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-correction-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Correction Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-syndrome-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Syndrome Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-and-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Performance and Scaling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Performance and Scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Strategies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-theoretical-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Future Theoretical Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Future Theoretical Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-classical-hybrid-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum-Classical Hybrid Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-quantum-phenomena" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Quantum Phenomena
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theoretical-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Mathematical Appendix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Mathematical Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-gate-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Gate Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-matrix-formalism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Matrix Formalism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#information-theoretic-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Information Theoretic Measures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quantum-nlp-theory">Quantum NLP Theory<a class="headerlink" href="#quantum-nlp-theory" title="Permanent link">&para;</a></h1>
+<p>This document explains the theoretical foundations of quantum-inspired mechanisms in natural language processing and how they are implemented in the Entanglement-Enhanced NLP framework.</p>
+<h2 id="introduction-to-quantum-inspired-nlp">🌌 Introduction to Quantum-Inspired NLP<a class="headerlink" href="#introduction-to-quantum-inspired-nlp" title="Permanent link">&para;</a></h2>
+<p>Quantum mechanics offers fascinating phenomena that can inspire novel approaches to natural language processing. While our framework runs on classical computers, it emulates key quantum properties to enhance semantic understanding and contextual modeling.</p>
+<h3 id="core-quantum-concepts-in-nlp">Core Quantum Concepts in NLP<a class="headerlink" href="#core-quantum-concepts-in-nlp" title="Permanent link">&para;</a></h3>
+<h4 id="quantum-entanglement">Quantum Entanglement<a class="headerlink" href="#quantum-entanglement" title="Permanent link">&para;</a></h4>
+<p>In quantum mechanics, entanglement describes correlations between particles that persist regardless of spatial separation. In NLP, we model semantic entanglement between tokens that share conceptual relationships.</p>
+<h4 id="superposition">Superposition<a class="headerlink" href="#superposition" title="Permanent link">&para;</a></h4>
+<p>Quantum superposition allows systems to exist in multiple states simultaneously. We apply this to tokens with ambiguous meanings, enabling multiple semantic interpretations to coexist.</p>
+<h4 id="decoherence">Decoherence<a class="headerlink" href="#decoherence" title="Permanent link">&para;</a></h4>
+<p>Quantum decoherence describes how quantum systems lose coherence when interacting with their environment. In NLP, this models how context clarity decreases over distance or time.</p>
+<h2 id="quantum-entanglement-in-embeddings">🔗 Quantum Entanglement in Embeddings<a class="headerlink" href="#quantum-entanglement-in-embeddings" title="Permanent link">&para;</a></h2>
+<h3 id="mathematical-foundation">Mathematical Foundation<a class="headerlink" href="#mathematical-foundation" title="Permanent link">&para;</a></h3>
+<p>The entanglement between two tokens <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> is modeled using a correlation function inspired by quantum mechanical Bell states:</p>
+<div class="arithmatex">\[\text{Entanglement}(i,j) = |\langle\psi_i|\psi_j\rangle|^2 \cdot \exp(-\gamma \cdot d(i,j))\]</div>
+<p>Where:
+- <span class="arithmatex">\(|\psi_i\rangle\)</span> and <span class="arithmatex">\(|\psi_j\rangle\)</span> are the quantum-inspired embedding states
+- <span class="arithmatex">\(\gamma\)</span> is the decoherence parameter
+- <span class="arithmatex">\(d(i,j)\)</span> is the distance between tokens</p>
+<h3 id="bell-state-inspiration">Bell State Inspiration<a class="headerlink" href="#bell-state-inspiration" title="Permanent link">&para;</a></h3>
+<p>Classical Bell states demonstrate maximum entanglement between two qubits:</p>
+<div class="arithmatex">\[|\Phi^+\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)\]</div>
+<p>We adapt this to create entangled embedding pairs:</p>
+<div class="arithmatex">\[|\psi_{ij}\rangle = \alpha|e_i e_j\rangle + \beta|e_i' e_j'\rangle\]</div>
+<p>Where <span class="arithmatex">\(e_i\)</span> and <span class="arithmatex">\(e_i'\)</span> represent primary and entangled embedding components.</p>
+<h3 id="implementation-in-entangledembedding">Implementation in EntangledEmbedding<a class="headerlink" href="#implementation-in-entangledembedding" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_compute_quantum_correlations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    Compute quantum-inspired correlations between tokens.</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">    Based on the mathematical framework:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    C_ij = &lt;ψ_i|ψ_j&gt; * exp(-γ * d_ij) * σ</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">    Where:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">    - C_ij: Correlation between tokens i and j</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    - γ: Decoherence rate</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">    - d_ij: Token distance</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">    - σ: Correlation strength</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span> <span class="o">=</span> <span class="n">input_ids</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="c1"># Create entangled state superpositions</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">base_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_embedding</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="n">entangled_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_superposition_states</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">base_embeddings</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="c1"># Compute inner products (quantum overlaps)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">correlations</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">entangled_embeddings</span><span class="p">,</span> <span class="n">entangled_embeddings</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="c1"># Apply distance-based decoherence</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">distance_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_distance_matrix</span><span class="p">(</span><span class="n">seq_len</span><span class="p">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="n">decoherence_factor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">decoherence_rate</span> <span class="o">*</span> <span class="n">distance_matrix</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="c1"># Final correlation matrix</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="n">correlations</span> <span class="o">=</span> <span class="n">correlations</span> <span class="o">*</span> <span class="n">decoherence_factor</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">correlation_strength</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="k">return</span> <span class="n">correlations</span>
+</code></pre></div>
+<h2 id="quantum-state-evolution">🌊 Quantum State Evolution<a class="headerlink" href="#quantum-state-evolution" title="Permanent link">&para;</a></h2>
+<h3 id="schrodinger-equation-inspiration">Schrödinger Equation Inspiration<a class="headerlink" href="#schrodinger-equation-inspiration" title="Permanent link">&para;</a></h3>
+<p>The quantum contextualizer is inspired by the time-dependent Schrödinger equation:</p>
+<div class="arithmatex">\[i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle = \hat{H}|\psi(t)\rangle\]</div>
+<p>We discretize this for embeddings:</p>
+<div class="arithmatex">\[|\psi(t+1)\rangle = U(t)|\psi(t)\rangle\]</div>
+<p>Where <span class="arithmatex">\(U(t) = \exp(-i\hat{H}t/\hbar)\)</span> is the evolution operator.</p>
+<h3 id="hamiltonian-design">Hamiltonian Design<a class="headerlink" href="#hamiltonian-design" title="Permanent link">&para;</a></h3>
+<p>The effective Hamiltonian for NLP contexts combines:</p>
+<div class="arithmatex">\[\hat{H} = \hat{H}_{\text{local}} + \hat{H}_{\text{interaction}} + \hat{H}_{\text{field}}\]</div>
+<ul>
+<li><strong>Local term</strong>: Individual token dynamics</li>
+<li><strong>Interaction term</strong>: Token-token correlations  </li>
+<li><strong>Field term</strong>: External context influence</li>
+</ul>
+<h3 id="evolution-implementation">Evolution Implementation<a class="headerlink" href="#evolution-implementation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_apply_quantum_evolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    Apply quantum state evolution to embeddings.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    Implements discretized Schrödinger evolution:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">    |ψ(t+1)⟩ = exp(-iH·dt)|ψ(t)⟩</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">hidden_dim</span> <span class="o">=</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="c1"># Get evolution operator for this step</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">H</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evolution_operators</span><span class="p">[</span><span class="n">step</span><span class="p">]</span>  <span class="c1"># Hamiltonian matrix</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="c1"># Apply matrix exponential (evolution operator)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="c1"># U = exp(-i * H * dt) approximated by series expansion</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">dt</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">evolution_steps</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="n">U</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matrix_exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">H</span> <span class="o">*</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>  <span class="c1"># Take real part for classical computation</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="c1"># Apply evolution to each token embedding</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="n">evolved_embeddings</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">return</span> <span class="n">evolved_embeddings</span>
+</code></pre></div>
+<h2 id="quantum-superposition-states">📊 Quantum Superposition States<a class="headerlink" href="#quantum-superposition-states" title="Permanent link">&para;</a></h2>
+<h3 id="superposition-principle">Superposition Principle<a class="headerlink" href="#superposition-principle" title="Permanent link">&para;</a></h3>
+<p>In quantum mechanics, a system can exist in a coherent superposition of multiple basis states:</p>
+<div class="arithmatex">\[|\psi\rangle = \sum_i \alpha_i |i\rangle\]</div>
+<p>For NLP, we create superposition states for tokens with multiple semantic meanings:</p>
+<div class="arithmatex">\[|\text{token}\rangle = \sum_k \alpha_k |\text{meaning}_k\rangle\]</div>
+<h3 id="amplitude-calculation">Amplitude Calculation<a class="headerlink" href="#amplitude-calculation" title="Permanent link">&para;</a></h3>
+<p>The probability amplitudes <span class="arithmatex">\(\alpha_k\)</span> are learned parameters that represent the likelihood of each semantic interpretation:</p>
+<div class="arithmatex">\[\alpha_k = \frac{\exp(\beta \cdot s_k)}{\sum_j \exp(\beta \cdot s_j)}\]</div>
+<p>Where <span class="arithmatex">\(s_k\)</span> is the semantic score for interpretation <span class="arithmatex">\(k\)</span>.</p>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_create_superposition_states</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">,</span> <span class="n">base_embeddings</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Create quantum superposition states for ambiguous tokens.</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    |ψ⟩ = Σ αₖ|meaning_k⟩</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">embedding_dim</span> <span class="o">=</span> <span class="n">base_embeddings</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="c1"># Compute quantum amplitudes for each token</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">amplitudes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantum_amplitudes</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span>  <span class="c1"># Shape: (batch, seq, num_superposition_states)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">amplitudes</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">amplitudes</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="c1"># Create superposition by weighted combination</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="c1"># This is a classical approximation of quantum superposition</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">superposition_components</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_superposition_states</span><span class="p">):</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">component</span> <span class="o">=</span> <span class="n">base_embeddings</span> <span class="o">*</span> <span class="n">amplitudes</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">superposition_components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">component</span><span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="c1"># Coherent superposition</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">superposition_state</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">superposition_components</span><span class="p">)</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="k">return</span> <span class="n">superposition_state</span>
+</code></pre></div>
+<h2 id="quantum-decoherence-modeling">⚡ Quantum Decoherence Modeling<a class="headerlink" href="#quantum-decoherence-modeling" title="Permanent link">&para;</a></h2>
+<h3 id="decoherence-theory">Decoherence Theory<a class="headerlink" href="#decoherence-theory" title="Permanent link">&para;</a></h3>
+<p>Quantum decoherence describes how quantum systems lose their quantum properties through interaction with the environment. The density matrix evolution follows:</p>
+<div class="arithmatex">\[\frac{d\rho}{dt} = -i[\hat{H}, \rho] + \mathcal{L}[\rho]\]</div>
+<p>Where <span class="arithmatex">\(\mathcal{L}\)</span> is the Lindblad operator modeling decoherence.</p>
+<h3 id="decoherence-in-nlp-context">Decoherence in NLP Context<a class="headerlink" href="#decoherence-in-nlp-context" title="Permanent link">&para;</a></h3>
+<p>For embeddings, decoherence represents how semantic clarity decreases with:
+- <strong>Distance</strong>: Farther tokens have weaker correlations
+- <strong>Time</strong>: Context relevance decays over processing steps
+- <strong>Complexity</strong>: More complex sentences have faster decoherence</p>
+<h3 id="mathematical-model">Mathematical Model<a class="headerlink" href="#mathematical-model" title="Permanent link">&para;</a></h3>
+<p>The decoherence rate is modeled as:</p>
+<div class="arithmatex">\[\Gamma(d, t) = \gamma_0 \exp\left(\frac{d}{d_0}\right) \left(1 + \frac{t}{t_0}\right)\]</div>
+<p>Where:
+- <span class="arithmatex">\(\gamma_0\)</span>: Base decoherence rate
+- <span class="arithmatex">\(d\)</span>: Token distance
+- <span class="arithmatex">\(t\)</span>: Processing time step
+- <span class="arithmatex">\(d_0, t_0\)</span>: Characteristic length and time scales</p>
+<h3 id="implementation_1">Implementation<a class="headerlink" href="#implementation_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_apply_decoherence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">    Apply quantum decoherence effects to embeddings.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="sd">    Models how quantum coherence decays over time and distance.</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">hidden_dim</span> <span class="o">=</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="c1"># Compute decoherence rates</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">time_factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">characteristic_time</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">distance_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_distance_matrix</span><span class="p">(</span><span class="n">seq_len</span><span class="p">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">spatial_factor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">distance_matrix</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">characteristic_length</span><span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="c1"># Total decoherence rate</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="n">decoherence_rate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_decoherence_rate</span> <span class="o">*</span> <span class="n">time_factor</span> <span class="o">*</span> <span class="n">spatial_factor</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="c1"># Apply decoherence as mixing with maximally mixed state</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="n">identity</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">embeddings</span><span class="o">.</span><span class="n">device</span><span class="p">)</span> <span class="o">/</span> <span class="n">hidden_dim</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="n">mixed_state</span> <span class="o">=</span> <span class="n">identity</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="c1"># Linear interpolation modeling decoherence</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="n">decoherent_embeddings</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">decoherence_rate</span><span class="p">)</span> <span class="o">*</span> <span class="n">embeddings</span> <span class="o">+</span> <span class="n">decoherence_rate</span> <span class="o">*</span> <span class="n">mixed_state</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="k">return</span> <span class="n">decoherent_embeddings</span>
+</code></pre></div>
+<h2 id="quantum-measurement-and-collapse">🔬 Quantum Measurement and Collapse<a class="headerlink" href="#quantum-measurement-and-collapse" title="Permanent link">&para;</a></h2>
+<h3 id="measurement-theory">Measurement Theory<a class="headerlink" href="#measurement-theory" title="Permanent link">&para;</a></h3>
+<p>In quantum mechanics, measurement causes wave function collapse:</p>
+<div class="arithmatex">\[|\psi\rangle = \sum_i \alpha_i |i\rangle \xrightarrow{\text{measurement}} |j\rangle\]</div>
+<p>With probability <span class="arithmatex">\(P(j) = |\alpha_j|^2\)</span>.</p>
+<h3 id="nlp-measurement-interpretation">NLP Measurement Interpretation<a class="headerlink" href="#nlp-measurement-interpretation" title="Permanent link">&para;</a></h3>
+<p>In NLP contexts, "measurement" represents:
+- <strong>Attention focus</strong>: Selecting specific semantic aspects
+- <strong>Decision making</strong>: Choosing among multiple interpretations
+- <strong>Context collapse</strong>: Reducing ambiguity through context</p>
+<h3 id="measurement-implementation">Measurement Implementation<a class="headerlink" href="#measurement-implementation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">measure_quantum_states</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="sd">    Simulate quantum measurement on embedding states.</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="sd">    Returns collapsed states and measurement probabilities.</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">hidden_dim</span> <span class="o">=</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="c1"># Define measurement operators (computational basis)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">measurement_operators</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_measurement_operators</span><span class="p">()</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="c1"># Compute measurement probabilities</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">probabilities</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">collapsed_states</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="k">for</span> <span class="n">operator</span> <span class="ow">in</span> <span class="n">measurement_operators</span><span class="p">:</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="c1"># Born rule: P = |⟨φ|ψ⟩|²</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="n">overlap</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">operator</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span class="n">prob</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">overlap</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="n">probabilities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="c1"># Collapsed state after measurement</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="n">collapsed</span> <span class="o">=</span> <span class="n">overlap</span> <span class="o">/</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">overlap</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="n">collapsed_states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">collapsed</span><span class="p">)</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    <span class="n">probabilities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    <span class="n">collapsed_states</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">collapsed_states</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span class="c1"># Compute measurement entropy</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    <span class="n">entropy</span> <span class="o">=</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">probabilities</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">probabilities</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>    <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        <span class="s1">&#39;probabilities&#39;</span><span class="p">:</span> <span class="n">probabilities</span><span class="p">,</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        <span class="s1">&#39;collapsed_states&#39;</span><span class="p">:</span> <span class="n">collapsed_states</span><span class="p">,</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>        <span class="s1">&#39;entropy&#39;</span><span class="p">:</span> <span class="n">entropy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>    <span class="p">}</span>
+</code></pre></div>
+<h2 id="quantum-information-measures">🧮 Quantum Information Measures<a class="headerlink" href="#quantum-information-measures" title="Permanent link">&para;</a></h2>
+<h3 id="von-neumann-entropy">Von Neumann Entropy<a class="headerlink" href="#von-neumann-entropy" title="Permanent link">&para;</a></h3>
+<p>Quantum entanglement is quantified using von Neumann entropy:</p>
+<div class="arithmatex">\[S(\rho) = -\text{Tr}(\rho \log \rho)\]</div>
+<p>For bipartite systems, this measures entanglement between subsystems.</p>
+<h3 id="mutual-information">Mutual Information<a class="headerlink" href="#mutual-information" title="Permanent link">&para;</a></h3>
+<p>Quantum mutual information between tokens <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span>:</p>
+<div class="arithmatex">\[I(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij})\]</div>
+<h3 id="concurrence">Concurrence<a class="headerlink" href="#concurrence" title="Permanent link">&para;</a></h3>
+<p>For two-token entanglement, concurrence provides a measure:</p>
+<div class="arithmatex">\[C = \max(0, \sqrt{\lambda_1} - \sqrt{\lambda_2} - \sqrt{\lambda_3} - \sqrt{\lambda_4})\]</div>
+<p>Where <span class="arithmatex">\(\lambda_i\)</span> are eigenvalues of the spin-flipped density matrix.</p>
+<h3 id="implementation_2">Implementation<a class="headerlink" href="#implementation_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">compute_entanglement_entropy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">    Compute von Neumann entropy as entanglement measure.</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="c1"># Convert embeddings to density matrix representation</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">density_matrix</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">density_matrix</span> <span class="o">=</span> <span class="n">density_matrix</span> <span class="o">/</span> <span class="n">torch</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">density_matrix</span><span class="p">,</span> <span class="n">dim1</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim2</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="c1"># Eigendecomposition</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">density_matrix</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">eigenvalues</span> <span class="o">+</span> <span class="mf">1e-8</span>  <span class="c1"># Numerical stability</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="c1"># Von Neumann entropy</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">entropy</span> <span class="o">=</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">eigenvalues</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">return</span> <span class="n">entropy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="quantum-error-correction">🔄 Quantum Error Correction<a class="headerlink" href="#quantum-error-correction" title="Permanent link">&para;</a></h2>
+<h3 id="error-correction-theory">Error Correction Theory<a class="headerlink" href="#error-correction-theory" title="Permanent link">&para;</a></h3>
+<p>Quantum error correction protects quantum information from decoherence and noise. The framework implements simplified error correction inspired by:</p>
+<ul>
+<li><strong>Bit-flip errors</strong>: Semantic meaning changes</li>
+<li><strong>Phase-flip errors</strong>: Context phase shifts  </li>
+<li><strong>Amplitude damping</strong>: Information loss over time</li>
+</ul>
+<h3 id="error-syndrome-detection">Error Syndrome Detection<a class="headerlink" href="#error-syndrome-detection" title="Permanent link">&para;</a></h3>
+<p>Error syndromes are detected using parity checks:</p>
+<div class="arithmatex">\[S_i = \prod_{j \in P_i} X_j\]</div>
+<p>Where <span class="arithmatex">\(P_i\)</span> is the parity check set for syndrome <span class="arithmatex">\(i\)</span>.</p>
+<h3 id="implementation_3">Implementation<a class="headerlink" href="#implementation_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">QuantumErrorCorrection</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">    Quantum-inspired error correction for embeddings.</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">detect_errors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">):</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="sd">        Detect error syndromes in embedding space.</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="c1"># Parity check matrices for error detection</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        <span class="n">parity_checks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parity_matrices</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        <span class="c1"># Compute syndromes</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="n">syndromes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">parity_checks</span><span class="p">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="n">error_indicators</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">syndromes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_threshold</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="k">return</span> <span class="n">error_indicators</span><span class="p">,</span> <span class="n">syndromes</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">correct_errors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">syndromes</span><span class="p">):</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="sd">        Apply error correction based on detected syndromes.</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="c1"># Error correction lookup table</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="n">corrections</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">correction_lookup</span><span class="p">[</span><span class="n">syndromes</span><span class="p">]</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>        <span class="c1"># Apply corrections</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>        <span class="n">corrected_embeddings</span> <span class="o">=</span> <span class="n">embeddings</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">correction_strength</span> <span class="o">*</span> <span class="n">corrections</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        <span class="k">return</span> <span class="n">corrected_embeddings</span>
+</code></pre></div>
+<h2 id="performance-and-scaling">📈 Performance and Scaling<a class="headerlink" href="#performance-and-scaling" title="Permanent link">&para;</a></h2>
+<h3 id="computational-complexity">Computational Complexity<a class="headerlink" href="#computational-complexity" title="Permanent link">&para;</a></h3>
+<p>The quantum-inspired operations have the following complexities:</p>
+<ul>
+<li><strong>Entanglement computation</strong>: <span class="arithmatex">\(O(L^2 \cdot d)\)</span> where <span class="arithmatex">\(L\)</span> is sequence length, <span class="arithmatex">\(d\)</span> is embedding dimension</li>
+<li><strong>State evolution</strong>: <span class="arithmatex">\(O(T \cdot L \cdot d^2)\)</span> where <span class="arithmatex">\(T\)</span> is evolution steps</li>
+<li><strong>Measurement simulation</strong>: <span class="arithmatex">\(O(M \cdot L \cdot d)\)</span> where <span class="arithmatex">\(M\)</span> is number of measurement operators</li>
+</ul>
+<h3 id="memory-requirements">Memory Requirements<a class="headerlink" href="#memory-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Correlation matrices</strong>: <span class="arithmatex">\(O(L^2)\)</span> additional memory per batch</li>
+<li><strong>Evolution operators</strong>: <span class="arithmatex">\(O(T \cdot d^2)\)</span> parameter storage</li>
+<li><strong>Superposition states</strong>: <span class="arithmatex">\(O(K \cdot L \cdot d)\)</span> where <span class="arithmatex">\(K\)</span> is superposition components</li>
+</ul>
+<h3 id="optimization-strategies">Optimization Strategies<a class="headerlink" href="#optimization-strategies" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Sparse correlations</strong>: Only compute correlations above threshold</li>
+<li><strong>Low-rank approximations</strong>: Approximate evolution operators</li>
+<li><strong>Gradient checkpointing</strong>: Trade computation for memory</li>
+<li><strong>Mixed precision</strong>: Use lower precision for quantum operations</li>
+</ol>
+<h2 id="future-theoretical-directions">🎯 Future Theoretical Directions<a class="headerlink" href="#future-theoretical-directions" title="Permanent link">&para;</a></h2>
+<h3 id="quantum-classical-hybrid-models">Quantum-Classical Hybrid Models<a class="headerlink" href="#quantum-classical-hybrid-models" title="Permanent link">&para;</a></h3>
+<p>Future work could explore:
+- <strong>Variational quantum algorithms</strong>: Using quantum computers for subcomponents
+- <strong>Quantum advantage scenarios</strong>: Identifying where quantum speedup is possible
+- <strong>Quantum machine learning</strong>: Integration with quantum ML algorithms</p>
+<h3 id="advanced-quantum-phenomena">Advanced Quantum Phenomena<a class="headerlink" href="#advanced-quantum-phenomena" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Quantum contextuality</strong>: Non-classical correlations in language</li>
+<li><strong>Quantum interference</strong>: Constructive/destructive semantic interference</li>
+<li><strong>Quantum teleportation</strong>: Information transfer between distant contexts</li>
+</ul>
+<h3 id="theoretical-validation">Theoretical Validation<a class="headerlink" href="#theoretical-validation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>No-cloning theorem</strong>: Implications for information duplication</li>
+<li><strong>Bell inequalities</strong>: Testing for genuine quantum-like correlations</li>
+<li><strong>Quantum supremacy</strong>: Identifying computational advantages</li>
+</ul>
+<h2 id="mathematical-appendix">📚 Mathematical Appendix<a class="headerlink" href="#mathematical-appendix" title="Permanent link">&para;</a></h2>
+<h3 id="quantum-gate-operations">Quantum Gate Operations<a class="headerlink" href="#quantum-gate-operations" title="Permanent link">&para;</a></h3>
+<p>Common quantum gates used in the framework:</p>
+<div class="arithmatex">\[\text{Hadamard: } H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; -1 \end{pmatrix}\]</div>
+<div class="arithmatex">\[\text{CNOT: } \text{CNOT} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix}\]</div>
+<div class="arithmatex">\[\text{Rotation: } R_y(\theta) = \begin{pmatrix} \cos(\theta/2) &amp; -\sin(\theta/2) \\ \sin(\theta/2) &amp; \cos(\theta/2) \end{pmatrix}\]</div>
+<h3 id="density-matrix-formalism">Density Matrix Formalism<a class="headerlink" href="#density-matrix-formalism" title="Permanent link">&para;</a></h3>
+<p>For mixed quantum states:</p>
+<div class="arithmatex">\[\rho = \sum_i p_i |\psi_i\rangle\langle\psi_i|\]</div>
+<p>Evolution under decoherence:</p>
+<div class="arithmatex">\[\frac{d\rho}{dt} = -i[H, \rho] + \sum_k \left(L_k \rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}\right)\]</div>
+<h3 id="information-theoretic-measures">Information Theoretic Measures<a class="headerlink" href="#information-theoretic-measures" title="Permanent link">&para;</a></h3>
+<p><strong>Quantum Fisher Information:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(F_Q = \text{Tr}(\rho L^2)\)</span>\)</span></p>
+<p><strong>Relative Entropy:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(S(\rho||\sigma) = \text{Tr}(\rho \log \rho - \rho \log \sigma)\)</span>\)</span></p>
+<p><strong>Quantum Capacity:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(Q(\mathcal{N}) = \lim_{n \to \infty} \frac{1}{n} \max_{\rho^{(n)}} I_c(\rho^{(n)}, \mathcal{N}^{\otimes n})\)</span>\)</span></p>
+<p>This theoretical foundation provides the mathematical basis for all quantum-inspired operations in the Entanglement-Enhanced NLP framework, bridging quantum mechanics concepts with practical natural language processing applications.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/krish567366/entanglement-enhanced-nlp" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/entanglement-enhanced-nlp/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
