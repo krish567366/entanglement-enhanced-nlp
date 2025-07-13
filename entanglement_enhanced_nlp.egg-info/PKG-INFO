@@ -1,0 +1,219 @@
+Metadata-Version: 2.4
+Name: entanglement-enhanced-nlp
+Version: 0.1.0
+Summary: Quantum entanglement-inspired Natural Language Processing framework
+Home-page: https://github.com/krish567366/entanglement-enhanced-nlp
+Author: Krishna Bajpai
+Author-email: Krishna Bajpai <bajpaikrishna715@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/krish567366/entanglement-enhanced-nlp
+Project-URL: Documentation, https://entanglement-enhanced-nlp.readthedocs.io
+Project-URL: Repository, https://github.com/krish567366/entanglement-enhanced-nlp.git
+Project-URL: Bug Tracker, https://github.com/krish567366/entanglement-enhanced-nlp/issues
+Keywords: nlp,quantum,entanglement,transformers,embeddings,ai
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=1.9.0
+Requires-Dist: transformers>=4.20.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: matplotlib>=3.4.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: networkx>=2.6.0
+Requires-Dist: plotly>=5.0.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: tqdm>=4.62.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: pennylane>=0.28.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.12.0; extra == "dev"
+Requires-Dist: black>=21.0.0; extra == "dev"
+Requires-Dist: flake8>=3.9.0; extra == "dev"
+Requires-Dist: mypy>=0.910; extra == "dev"
+Requires-Dist: pre-commit>=2.15.0; extra == "dev"
+Requires-Dist: jupyter>=1.0.0; extra == "dev"
+Requires-Dist: ipykernel>=6.0.0; extra == "dev"
+Requires-Dist: nbconvert>=6.0.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=4.0.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.0.0; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints>=1.12.0; extra == "docs"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# Entanglement Enhanced NLP 🌌
+
+A groundbreaking framework that integrates quantum entanglement concepts into Natural Language Processing (NLP) models, enabling more nuanced understanding of semantic relationships, superior context awareness, and highly efficient processing of complex linguistic data.
+
+**Author:** Krishna Bajpai (bajpaikrishna715@gmail.com)
+
+## 🚀 Features
+
+- **EntangledEmbedding**: Custom embedding class modeling entangled word-pairs using shared vector states and non-local attention
+- **QuantumContextualizer**: Layer that enhances token embeddings using quantum-state evolution principles
+- **Entanglement-aware Transformers**: HuggingFace transformer extensions with entangled attention layers
+- **Non-local Correlation Scoring**: Sentence and document-level correlation analysis
+- **Quantum Simulator Backend**: Optional numpy/pennylane backend for quantum-like behavior emulation
+- **CLI Tool**: `eenlp-cli` for entangled text analysis
+- **Visualization**: Token entanglement graphs and correlation heatmaps
+- **Export Support**: JSON results and comprehensive reporting
+
+## 🔬 Quantum-Inspired Mechanisms
+
+This framework emulates key quantum mechanical properties in classical NLP:
+
+- **Entanglement**: Non-local correlations between semantically related tokens
+- **Superposition**: Probabilistic token states enabling multiple semantic interpretations
+- **Decoherence**: Gradual loss of quantum coherence modeling context decay
+- **Quantum State Evolution**: Dynamic embedding updates based on quantum evolution principles
+
+## 📦 Installation
+
+```bash
+pip install entanglement-enhanced-nlp
+```
+
+### Development Installation
+
+```bash
+git clone https://github.com/your-repo/entanglement-enhanced-nlp.git
+cd entanglement-enhanced-nlp
+pip install -e .
+```
+
+## 🔧 Quick Start
+
+```python
+from entanglement_enhanced_nlp import EntangledEmbedding, QuantumContextualizer
+import torch
+
+# Create entangled embeddings
+embedder = EntangledEmbedding(
+    vocab_size=10000,
+    embedding_dim=768,
+    entanglement_depth=3,
+    correlation_strength=0.8
+)
+
+# Initialize quantum contextualizer
+contextualizer = QuantumContextualizer(
+    hidden_dim=768,
+    num_qubits=8,
+    decoherence_rate=0.1
+)
+
+# Process text with quantum-enhanced embeddings
+text_ids = torch.tensor([[1, 2, 3, 4, 5]])
+entangled_embeddings = embedder(text_ids)
+quantum_context = contextualizer(entangled_embeddings)
+```
+
+## 🎯 Use Cases
+
+- **Enhanced Semantic Understanding**: Better capture of nuanced word relationships
+- **Context-Aware Processing**: Superior long-range dependency modeling
+- **Multilingual Applications**: Cross-lingual entanglement for translation tasks
+- **Quantum NLP Research**: Testbed for quantum-classical hybrid approaches
+- **Advanced Chatbots**: More human-like language comprehension
+
+## 📊 CLI Usage
+
+```bash
+# Analyze text file with entanglement scoring
+eenlp-cli analyze --input text.txt --output results.json --visualize
+
+# Process dataset with quantum contextualizer
+eenlp-cli process --dataset data.csv --model-config config.yaml
+
+# Generate entanglement visualization
+eenlp-cli visualize --input results.json --output entanglement_graph.png
+```
+
+## 🧪 Examples
+
+Check out the `examples/` directory for comprehensive Jupyter notebooks demonstrating:
+
+- Basic entangled embedding usage
+- Quantum contextualizer integration
+- HuggingFace transformer extensions
+- Visualization and analysis workflows
+- Performance benchmarking
+
+## 🔬 Mathematical Foundation
+
+The framework implements quantum-inspired operations:
+
+### Entanglement Correlation
+
+```bash
+|ψ⟩ = α|00⟩ + β|11⟩
+Correlation(i,j) = ⟨ψᵢ|ψⱼ⟩ · exp(-γ·d(i,j))
+```
+
+### Quantum State Evolution
+
+```bash
+|ψ(t+1)⟩ = U(θ)|ψ(t)⟩
+U(θ) = exp(-iH·θ)
+```
+
+### Decoherence Modeling
+
+```bash
+ρ(t) = (1-λ)ρ(t-1) + λ·I/d
+```
+
+## 🧪 Testing
+
+```bash
+pytest tests/ -v
+```
+
+## 📄 License
+
+MIT License - see LICENSE file for details.
+
+## 🤝 Contributing
+
+Contributions welcome! Please read CONTRIBUTING.md for guidelines.
+
+## 📚 Citation
+
+If you use this framework in your research, please cite:
+
+```bibtex
+@software{entanglement_enhanced_nlp,
+  title={Entanglement Enhanced NLP: Quantum-Inspired Natural Language Processing},
+  author={Krishna Bajpai},
+  year={2025},
+  url={https://github.com/your-repo/entanglement-enhanced-nlp}
+}
+```
+
+## 🌟 Acknowledgments
+
+This work bridges quantum mechanics and NLP, inspired by the potential for quantum-classical hybrid approaches in advancing AI comprehension capabilities.
+
+---
+
+**Note**: This is a classical simulation of quantum-inspired mechanisms designed for research and educational purposes. While it emulates quantum properties, it runs on classical hardware.

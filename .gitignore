@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+.Python
+.env
+.venv
+env/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.manifest
+*.spec
+
+# mkdocs
+site/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
+
+# Pre-commit
+.mypy_cache/
+.pytest_cache/
+.tox/
+# Documentation
+entanglement_enhanced_nlp/
+.tes

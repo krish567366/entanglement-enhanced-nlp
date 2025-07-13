@@ -1,0 +1,2 @@
+[console_scripts]
+eenlp-cli = entanglement_enhanced_nlp.cli:main
