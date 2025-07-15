@@ -19,23 +19,27 @@ We welcome several types of contributions:
 
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
+
    ```bash
    git clone https://github.com/krish567366/entanglement-enhanced-nlp.git
    cd entanglement-enhanced-nlp
    ```
 
 3. **Create a virtual environment**:
+
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 4. **Install development dependencies**:
+
    ```bash
    pip install -e ".[dev]"
    ```
 
 5. **Create a feature branch**:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -106,7 +110,7 @@ isort entanglement_enhanced_nlp/ tests/
 - Use **type hints** for all function signatures
 - Write comprehensive **docstrings** for all public functions
 
-### Example Function:
+### Example Function
 
 ```python
 def compute_entanglement_correlation(
@@ -160,7 +164,7 @@ def compute_entanglement_correlation(
 - Mirror the package structure in test files
 - Use descriptive test names that explain what is being tested
 
-### Test Example:
+### Test Example
 
 ```python
 class TestEntangledEmbedding:
@@ -319,13 +323,15 @@ embedder = EntangledEmbedding(vocab_size=1000, embedding_dim=768)
 ```
 
 **Error Output:**
-```
+
+```plaintext
 Full error traceback here
 ```
 
 **Additional Context:**
 Any other relevant information.
-```
+
+```plaintext
 
 ## 🌟 Feature Requests
 

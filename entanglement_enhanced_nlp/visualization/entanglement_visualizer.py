@@ -21,6 +21,9 @@ from sklearn.decomposition import PCA
 import io
 import base64
 
+# Import licensing
+from ..licensing import validate_class_license, requires_license
+
 
 class EntanglementVisualizer:
     """
@@ -33,6 +36,9 @@ class EntanglementVisualizer:
     - Temporal evolution of quantum states
     - Dimensionality reduction plots
     - Interactive dashboards
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     
     Args:
         style: Matplotlib/seaborn style ('default', 'dark', 'scientific')
@@ -50,6 +56,9 @@ class EntanglementVisualizer:
         dpi: int = 300,
         interactive: bool = True,
     ):
+        # Validate license before allowing class instantiation
+        validate_class_license(["entanglement_visualizer"])
+        
         self.style = style
         self.color_palette = color_palette
         self.figure_size = figure_size

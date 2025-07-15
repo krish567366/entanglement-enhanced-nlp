@@ -13,6 +13,9 @@ from typing import Optional, Tuple, Dict, List
 import numpy as np
 import math
 
+# Import licensing
+from ..licensing import validate_class_license, requires_license
+
 
 class QuantumContextualizer(nn.Module):
     """
@@ -27,6 +30,9 @@ class QuantumContextualizer(nn.Module):
     - Evolution Operator: U(t) = exp(-iH·t) (Hamiltonian evolution)
     - Measurement: ⟨O⟩ = ⟨ψ|O|ψ⟩ (expectation value of observable)
     - Decoherence: ρ(t) = Σₖ EₖρE†ₖ (Kraus operator formalism)
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     
     Args:
         hidden_dim: Dimension of hidden states
@@ -48,6 +54,9 @@ class QuantumContextualizer(nn.Module):
         measurement_basis: str = 'computational',
         dropout: float = 0.1,
     ):
+        # Validate license before allowing class instantiation
+        validate_class_license(["quantum_contextualizer"])
+        
         super().__init__()
         
         self.hidden_dim = hidden_dim

@@ -7,7 +7,7 @@ Author: Krishna Bajpai
 Author-email: Krishna Bajpai <bajpaikrishna715@gmail.com>
 License: MIT
 Project-URL: Homepage, https://github.com/krish567366/entanglement-enhanced-nlp
-Project-URL: Documentation, https://entanglement-enhanced-nlp.readthedocs.io
+Project-URL: Documentation, https://krish567366.github.io/entanglement-enhanced-nlp/
 Project-URL: Repository, https://github.com/krish567366/entanglement-enhanced-nlp.git
 Project-URL: Bug Tracker, https://github.com/krish567366/entanglement-enhanced-nlp/issues
 Keywords: nlp,quantum,entanglement,transformers,embeddings,ai
@@ -62,6 +62,8 @@ Dynamic: license-file
 Dynamic: requires-python
 
 # Entanglement Enhanced NLP 🌌
+
+[![Docs](https://img.shields.io/badge/docs-online-purple?logo=readthedocs)](https://krish567366.github.io/entanglement-enhanced-nlp/)
 
 A groundbreaking framework that integrates quantum entanglement concepts into Natural Language Processing (NLP) models, enabling more nuanced understanding of semantic relationships, superior context awareness, and highly efficient processing of complex linguistic data.
 

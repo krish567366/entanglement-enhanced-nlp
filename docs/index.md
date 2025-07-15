@@ -1,5 +1,11 @@
 # Entanglement-Enhanced NLP 🌌
 
+[![PyPI - Version](https://img.shields.io/pypi/v/entanglement-enhanced-nlp?color=green&label=PyPI&logo=pypi)](https://pypi.org/project/entanglement-enhanced-nlp/)
+[![PyPI Downloads](https://static.pepy.tech/badge/entanglement-enhanced-nlp)](https://pepy.tech/projects/entanglement-enhanced-nlp)
+[![Python Version](https://img.shields.io/pypi/pyversions/entanglement-enhanced-nlp)](https://pypi.org/project/entanglement-enhanced-nlp/)
+[![License](https://img.shields.io/pypi/l/entanglement-enhanced-nlp)](https://pypi.org/project/entanglement-enhanced-nlp/)
+[![Docs](https://img.shields.io/badge/docs-online-brown?logo=readthedocs)](https://krish567366.github.io/entanglement-enhanced-nlp/)
+
 !!! info "Revolutionary Quantum-Inspired NLP Framework"
     A groundbreaking framework that integrates quantum entanglement concepts into Natural Language Processing (NLP) models, enabling more nuanced understanding of semantic relationships, superior context awareness, and highly efficient processing of complex linguistic data.
 
@@ -17,9 +23,11 @@ This framework represents a paradigm shift in NLP by introducing quantum-inspire
 ## 🚀 Core Features
 
 ### 🔗 Entangled Embeddings
+
 Custom embedding layers that model quantum entanglement between semantically related tokens, enabling non-local correlation capture.
 
 ### 🌊 Quantum Contextualization
+
 State evolution mechanisms that enhance token representations using quantum-inspired dynamics.
 
 ### 🔄 Transformer Extensions

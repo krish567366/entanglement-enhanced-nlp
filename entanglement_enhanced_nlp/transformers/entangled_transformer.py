@@ -24,6 +24,9 @@ from ..core.entangled_attention import EntangledAttention
 from ..core.quantum_contextualizer import QuantumContextualizer
 from ..core.entangled_embedding import EntangledEmbedding
 
+# Import licensing
+from ..licensing import validate_class_license, requires_license
+
 
 class EntangledTransformerConfig(PretrainedConfig):
     """
@@ -31,6 +34,9 @@ class EntangledTransformerConfig(PretrainedConfig):
     
     This configuration extends the standard transformer configuration with
     quantum entanglement-specific parameters.
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     """
     
     model_type = "entangled_transformer"
@@ -99,9 +105,15 @@ class EntangledTransformerLayer(nn.Module):
     
     This layer integrates quantum-inspired attention and contextualizer
     into a standard transformer architecture.
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     """
     
     def __init__(self, config: EntangledTransformerConfig):
+        # Validate license before allowing class instantiation
+        validate_class_license(["entangled_transformer"])
+        
         super().__init__()
         
         self.config = config
@@ -200,12 +212,18 @@ class EntangledTransformer(PreTrainedModel):
     
     This model extends standard transformer architectures with quantum-inspired
     mechanisms for enhanced semantic understanding and context modeling.
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     """
     
     config_class = EntangledTransformerConfig
     base_model_prefix = "entangled_transformer"
     
     def __init__(self, config: EntangledTransformerConfig):
+        # Validate license before allowing class instantiation
+        validate_class_license(["entangled_transformer"])
+        
         super().__init__(config)
         
         self.config = config

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="entanglement-enhanced-nlp",
-    version="0.1.0",
+    version="1.0.0",
     author="Krishna Bajpai",
     author_email="bajpaikrishna715@gmail.com",
     description="Quantum entanglement-inspired Natural Language Processing framework",
@@ -42,6 +42,7 @@ setup(
         "pyyaml>=6.0",
         "scikit-learn>=1.0.0",
         "pennylane>=0.28.0",
+        "quantummeta-license>=1.0.0",
     ],
     extras_require={
         "dev": [
@@ -69,7 +70,7 @@ setup(
     keywords="nlp quantum entanglement transformers embeddings ai",
     project_urls={
         "Bug Tracker": "https://github.com/krish567366/entanglement-enhanced-nlp/issues",
-        "Documentation": "https://entanglement-enhanced-nlp.readthedocs.io",
+        "Documentation": "https://krish567366.github.io/entanglement-enhanced-nlp/",
         "Source Code": "https://github.com/krish567366/entanglement-enhanced-nlp",
     },
 )

@@ -14,6 +14,9 @@ import pennylane as qml
 from pennylane import numpy as pnp
 import math
 
+# Import licensing
+from ..licensing import validate_class_license, requires_license
+
 
 class QuantumSimulator:
     """
@@ -31,6 +34,9 @@ class QuantumSimulator:
     - Entanglement and superposition modeling
     - Decoherence and noise simulation
     
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
+    
     Args:
         num_qubits: Number of qubits in the quantum system
         backend: Quantum simulation backend ('default.qubit', 'lightning.qubit')
@@ -45,6 +51,9 @@ class QuantumSimulator:
         shots: Optional[int] = None,
         noise_model: Optional[Dict] = None,
     ):
+        # Validate license before allowing class instantiation
+        validate_class_license(["quantum_simulator"])
+        
         self.num_qubits = num_qubits
         self.backend = backend
         self.shots = shots

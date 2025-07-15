@@ -13,6 +13,9 @@ from typing import Optional, Tuple, Dict, Any
 import numpy as np
 import math
 
+# Import licensing
+from ..licensing import validate_class_license, requires_license
+
 
 class EntangledEmbedding(nn.Module):
     """
@@ -26,6 +29,9 @@ class EntangledEmbedding(nn.Module):
     - Entangled State: |ψ⟩ = α|00⟩ + β|11⟩ + γ|01⟩ + δ|10⟩
     - Correlation Measure: C(i,j) = ⟨ψᵢ|ψⱼ⟩ · exp(-λ·d(i,j))
     - Non-local Attention: A(i,j) = softmax(Q(i)·K(j)ᵀ + C(i,j))
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     
     Args:
         vocab_size: Size of the vocabulary
@@ -47,6 +53,9 @@ class EntangledEmbedding(nn.Module):
         max_position_embeddings: int = 512,
         dropout: float = 0.1,
     ):
+        # Validate license before allowing class instantiation
+        validate_class_license(["basic_embedding"])
+        
         super().__init__()
         
         self.vocab_size = vocab_size

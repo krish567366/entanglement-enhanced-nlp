@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "entanglement-enhanced-nlp"
-version = "0.1.0"
+version = "1.0.0"
 authors = [
     {name = "Krishna Bajpai", email = "bajpaikrishna715@gmail.com"},
 ]
@@ -66,7 +66,7 @@ docs = [
 
 [project.urls]
 Homepage = "https://github.com/krish567366/entanglement-enhanced-nlp"
-Documentation = "https://entanglement-enhanced-nlp.readthedocs.io"
+Documentation = "https://krish567366.github.io/entanglement-enhanced-nlp/"
 Repository = "https://github.com/krish567366/entanglement-enhanced-nlp.git"
 "Bug Tracker" = "https://github.com/krish567366/entanglement-enhanced-nlp/issues"
 

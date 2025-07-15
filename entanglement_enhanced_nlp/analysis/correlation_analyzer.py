@@ -19,6 +19,9 @@ import networkx as nx
 from collections import defaultdict
 import json
 
+# Import licensing
+from ..licensing import validate_class_license, requires_license
+
 
 class CorrelationAnalyzer:
     """
@@ -30,6 +33,9 @@ class CorrelationAnalyzer:
     - Token interaction networks
     - Temporal correlation evolution
     - Cross-linguistic entanglement patterns
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     
     Args:
         correlation_threshold: Minimum correlation strength to consider significant
@@ -45,6 +51,9 @@ class CorrelationAnalyzer:
         max_tokens: int = 1000,
         analysis_mode: str = "comprehensive",
     ):
+        # Validate license before allowing class instantiation
+        validate_class_license(["correlation_analyzer"])
+        
         self.correlation_threshold = correlation_threshold
         self.entanglement_threshold = entanglement_threshold
         self.max_tokens = max_tokens

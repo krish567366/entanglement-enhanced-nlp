@@ -13,6 +13,9 @@ from typing import Optional, Tuple, Dict
 import math
 import numpy as np
 
+# Import licensing
+from ..licensing import validate_class_license, requires_license
+
 
 class EntangledAttention(nn.Module):
     """
@@ -27,6 +30,9 @@ class EntangledAttention(nn.Module):
     - Entanglement Term: E(i,j) = ⟨ψᵢ|ψⱼ⟩ · exp(-λ·|i-j|)
     - Non-local Correlation: C(i,j) = Σₖ A(i,k)·A(j,k)·entangle(k)
     - Quantum Superposition: |out⟩ = Σᵢ αᵢ|vᵢ⟩ with quantum amplitudes
+    
+    LICENSE REQUIRED: This class requires a valid license to operate.
+    Contact bajpaikrishna715@gmail.com for licensing information.
     
     Args:
         hidden_dim: Dimension of hidden states
@@ -48,6 +54,9 @@ class EntangledAttention(nn.Module):
         dropout: float = 0.1,
         bias: bool = True,
     ):
+        # Validate license before allowing class instantiation
+        validate_class_license(["entangled_attention"])
+        
         super().__init__()
         
         assert hidden_dim % num_heads == 0, "hidden_dim must be divisible by num_heads"
