@@ -12,6 +12,7 @@ tqdm>=4.62.0
 pyyaml>=6.0
 scikit-learn>=1.0.0
 pennylane>=0.28.0
+quantummeta-license>=1.0.0
 
 [dev]
 pytest>=6.0

@@ -17,12 +17,12 @@ from tqdm import tqdm
 import warnings
 warnings.filterwarnings("ignore")
 
-from ..core.entangled_embedding import EntangledEmbedding
-from ..core.quantum_contextualizer import QuantumContextualizer
-from ..transformers.entangled_transformer import EntangledTransformer, EntangledTransformerConfig
-from ..analysis.correlation_analyzer import CorrelationAnalyzer
-from ..visualization.entanglement_visualizer import EntanglementVisualizer
-from ..utils.quantum_simulator import QuantumSimulator
+from .core.entangled_embedding import EntangledEmbedding
+from .core.quantum_contextualizer import QuantumContextualizer
+from .transformers.entangled_transformer import EntangledTransformer, EntangledTransformerConfig
+from .analysis.correlation_analyzer import CorrelationAnalyzer
+from .visualization.entanglement_visualizer import EntanglementVisualizer
+from .utils.quantum_simulator import QuantumSimulator
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 
 @click.group()
-@click.version_option(version="1.0.0")
+@click.version_option(version="1.0.1")
 def main():
     """
     Entanglement Enhanced NLP CLI Tool

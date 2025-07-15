@@ -10,12 +10,20 @@ import torch
 import torch.nn as nn
 import numpy as np
 from typing import List, Dict, Tuple, Optional, Union, Any
-import pennylane as qml
-from pennylane import numpy as pnp
 import math
 
 # Import licensing
 from ..licensing import validate_class_license, requires_license
+
+# Optional PennyLane import for advanced quantum features
+try:
+    import pennylane as qml
+    from pennylane import numpy as pnp
+    PENNYLANE_AVAILABLE = True
+except ImportError:
+    qml = None
+    pnp = None
+    PENNYLANE_AVAILABLE = False
 
 
 class QuantumSimulator:
@@ -70,7 +78,7 @@ class QuantumSimulator:
         self.noise_strength = noise_model.get('strength', 0.01) if noise_model else 0.0
         self.decoherence_rate = noise_model.get('decoherence', 0.001) if noise_model else 0.0
     
-    def create_quantum_circuit(self, operations: List[Dict[str, Any]]) -> qml.QNode:
+    def create_quantum_circuit(self, operations: List[Dict[str, Any]]) -> Any:
         """
         Create a quantum circuit from operation specifications.
         
@@ -79,8 +87,13 @@ class QuantumSimulator:
                 Each operation is a dict with 'gate', 'wires', and optional 'params'
                 
         Returns:
-            PennyLane QNode representing the quantum circuit
+            PennyLane QNode representing the quantum circuit if available, 
+            otherwise classical simulation
         """
+        if not PENNYLANE_AVAILABLE:
+            # Return simplified classical circuit simulation
+            return self._create_classical_circuit(operations)
+            
         def circuit():
             for op in operations:
                 gate_name = op['gate']
@@ -120,7 +133,10 @@ class QuantumSimulator:
             # Return state vector or expectation values
             return qml.state()
         
-        qnode = qml.QNode(circuit, self.device)
+        if PENNYLANE_AVAILABLE:
+            qnode = qml.QNode(circuit, self.device)
+        else:
+            qnode = self._create_classical_circuit(operations)
         self.circuit_history.append(operations)
         return qnode
     

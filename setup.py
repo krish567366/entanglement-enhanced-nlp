@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="entanglement-enhanced-nlp",
-    version="1.0.0",
+    version="1.1.1",
     author="Krishna Bajpai",
     author_email="bajpaikrishna715@gmail.com",
     description="Quantum entanglement-inspired Natural Language Processing framework",

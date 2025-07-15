@@ -49,3 +49,51 @@ pytest_cache/
 # Documentation
 entanglement_enhanced_nlp/
 .tes
+
+# License files and keys - IMPORTANT: Keep licensing secure
+*.license
+*.key
+license_cache/
+.license_cache/
+quantum_license.json
+.quantum_license/
+
+# Model checkpoints and data
+checkpoints/
+models/
+data/
+*.pkl
+*.pth
+*.pt
+*.ckpt
+
+# Logs and experiments
+logs/
+experiments/
+wandb/
+tensorboard/
+mlruns/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Documentation build
+site/
+docs/_build/

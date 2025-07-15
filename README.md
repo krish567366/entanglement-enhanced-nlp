@@ -3,7 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/entanglement-enhanced-nlp?color=green&label=PyPI&logo=pypi)](https://pypi.org/project/entanglement-enhanced-nlp/)
 [![PyPI Downloads](https://static.pepy.tech/badge/entanglement-enhanced-nlp)](https://pepy.tech/projects/entanglement-enhanced-nlp)
 [![Python Version](https://img.shields.io/pypi/pyversions/entanglement-enhanced-nlp)](https://pypi.org/project/entanglement-enhanced-nlp/)
-[![License](https://img.shields.io/pypi/l/entanglement-enhanced-nlp)](https://pypi.org/project/entanglement-enhanced-nlp/)
+[![License: Commercial](https://img.shields.io/badge/license-commercial-critical.svg)](https://krish567366.github.io/license)
 [![Docs](https://img.shields.io/badge/docs-online-brown?logo=readthedocs)](https://krish567366.github.io/entanglement-enhanced-nlp/)
 
 A groundbreaking framework that integrates quantum entanglement concepts into Natural Language Processing (NLP) models, enabling more nuanced understanding of semantic relationships, superior context awareness, and highly efficient processing of complex linguistic data.

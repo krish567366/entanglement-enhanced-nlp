@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: entanglement-enhanced-nlp
-Version: 0.1.0
+Version: 1.1.1
 Summary: Quantum entanglement-inspired Natural Language Processing framework
 Home-page: https://github.com/krish567366/entanglement-enhanced-nlp
 Author: Krishna Bajpai
@@ -42,6 +42,7 @@ Requires-Dist: tqdm>=4.62.0
 Requires-Dist: pyyaml>=6.0
 Requires-Dist: scikit-learn>=1.0.0
 Requires-Dist: pennylane>=0.28.0
+Requires-Dist: quantummeta-license>=1.0.0
 Provides-Extra: dev
 Requires-Dist: pytest>=6.0; extra == "dev"
 Requires-Dist: pytest-cov>=2.12.0; extra == "dev"
@@ -63,7 +64,11 @@ Dynamic: requires-python
 
 # Entanglement Enhanced NLP 🌌
 
-[![Docs](https://img.shields.io/badge/docs-online-purple?logo=readthedocs)](https://krish567366.github.io/entanglement-enhanced-nlp/)
+[![PyPI - Version](https://img.shields.io/pypi/v/entanglement-enhanced-nlp?color=green&label=PyPI&logo=pypi)](https://pypi.org/project/entanglement-enhanced-nlp/)
+[![PyPI Downloads](https://static.pepy.tech/badge/entanglement-enhanced-nlp)](https://pepy.tech/projects/entanglement-enhanced-nlp)
+[![Python Version](https://img.shields.io/pypi/pyversions/entanglement-enhanced-nlp)](https://pypi.org/project/entanglement-enhanced-nlp/)
+[![License: Commercial](https://img.shields.io/badge/license-commercial-critical.svg)](https://krish567366.github.io/license)
+[![Docs](https://img.shields.io/badge/docs-online-brown?logo=readthedocs)](https://krish567366.github.io/entanglement-enhanced-nlp/)
 
 A groundbreaking framework that integrates quantum entanglement concepts into Natural Language Processing (NLP) models, enabling more nuanced understanding of semantic relationships, superior context awareness, and highly efficient processing of complex linguistic data.
 

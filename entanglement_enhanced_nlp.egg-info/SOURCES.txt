@@ -4,6 +4,7 @@ pyproject.toml
 setup.py
 entanglement_enhanced_nlp/__init__.py
 entanglement_enhanced_nlp/cli.py
+entanglement_enhanced_nlp/licensing.py
 entanglement_enhanced_nlp.egg-info/PKG-INFO
 entanglement_enhanced_nlp.egg-info/SOURCES.txt
 entanglement_enhanced_nlp.egg-info/dependency_links.txt

@@ -10,7 +10,7 @@ Author: Krishna Bajpai (bajpaikrishna715@gmail.com)
 This software is protected by licensing. Contact bajpaikrishna715@gmail.com for licensing information.
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __author__ = "Krishna Bajpai"
 __email__ = "bajpaikrishna715@gmail.com"
 __description__ = "Quantum entanglement-inspired Natural Language Processing framework"
